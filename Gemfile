@@ -39,6 +39,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.7'
   gem 'guard-rspec', require: false
+  gem 'rails-controller-testing'
 end
 
 group :development do
