@@ -89,9 +89,7 @@ RSpec.describe SubjectsController, type: :controller do
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
         subject = Subject.create! valid_attributes
-        expect {
-          put :update, params: {id: subject.to_param, subject: invalid_attributes}
-        }.to change(Subject, :count).by(0)
+        put :update, params: {id: subject.to_param, subject: invalid_attributes}
         expect(response).to be_success
       end
     end

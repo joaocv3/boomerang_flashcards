@@ -85,9 +85,7 @@ RSpec.describe CategoriesController, type: :controller do
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
         category = Category.create! valid_attributes
-        expect {
-					put :update, params: {id: category.to_param, category: invalid_attributes}
-        }.to change(Category, :count).by(0)
+        put :update, params: {id: category.to_param, category: invalid_attributes}
         expect(response).to be_success
       end
     end
