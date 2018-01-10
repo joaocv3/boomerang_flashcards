@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107012239) do
+ActiveRecord::Schema.define(version: 20180110002347) do
 
   create_table "cards", force: :cascade do |t|
+    t.integer "subject_id"
     t.string "front"
     t.string "back"
     t.integer "memorizing_level"
-    t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_cards_on_subject_id"
   end
 
   create_table "categories", force: :cascade do |t|
